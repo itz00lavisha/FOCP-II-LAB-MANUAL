@@ -99,7 +99,7 @@ return 0;
 int Result(int s1,int s2,int s3,int s4,int s5)
 {
     return(s1+s2+s3+s4+s5);
-}*/
+}
 
 
 // DEFAULT METHOD
@@ -121,4 +121,25 @@ int main()
 void welcome(string fname,string lname)
 {
     cout<<"\n Welcome "<<fname<<lname;
+}*/
+
+
+//SWAPING BY POINTERS AND REFERENCE
+
+#include<iostream>
+using namespace std;
+
+
+void swap(int &r1,int &r2)
+{
+  int temp=r1;
+  r1=r2;
+  r2=temp;
+
+}
+int main(){
+int a=30,b=55;
+swap(a,b);
+cout<<a<<","<<b;
+return 0;
 }
