@@ -121,7 +121,7 @@ int main()
 void welcome(string fname,string lname)
 {
     cout<<"\n Welcome "<<fname<<lname;
-}*/
+}
 
 
 //SWAPING BY POINTERS AND REFERENCE
@@ -135,11 +135,13 @@ void swap(int &r1,int &r2)
   int temp=r1;
   r1=r2;
   r2=temp;
-
 }
+
 int main(){
 int a=30,b=55;
 swap(a,b);
 cout<<a<<","<<b;
 return 0;
-}
+}*/
+
+//QUEST : READ ALL STUDENTS MARKS IN AN ARRAY AND CREATE A FUNCTION TO DISPLAY MAXIMUM ,MINIMUM AND AVERAGE
