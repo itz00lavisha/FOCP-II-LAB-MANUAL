@@ -129,7 +129,7 @@ class BankAccount
         c1.displayCandy();
         c2.displayCandy();
         return 0;
-    }*/
+    }
 
 
 
@@ -179,3 +179,159 @@ class BankAccount
         c2.displayCandy();
         return 0;
     }
+
+
+ //ELECTRICITY BILL
+
+#include <iostream>
+using namespace std;
+
+class ElectricityBill
+{
+private:
+ string consumerName;
+ int units;
+ float billAmount;
+public:
+
+ ElectricityBill()    // Default Constructor
+ {
+ consumerName = "Not Assigned";
+ units = 0;
+ billAmount = 0;
+ }
+
+ ElectricityBill(string name, int u) // Parameterized Constructor
+ {
+ consumerName = name;
+ units = u;
+ billAmount = 0;
+ }
+
+ void calculateBill()  // Function to calculate bill
+ {
+ if (units <= 100)
+ {
+ billAmount = units * 5;
+ }
+ else if (units <= 200)
+ {
+ billAmount = (100 * 5) + ((units - 100) * 7);
+ }
+ else
+ {
+ billAmount = (100 * 5) + (100 * 7) + ((units - 200) * 10);
+ }
+ }
+
+ void displayBill()   // Function to display bill
+ {
+ cout << "\n----- Electricity Bill -----\n";
+ cout << "Consumer Name : " << consumerName << endl;
+ cout << "Units Consumed: " << units << endl;
+ cout << "Total Bill : Rs. " << billAmount << endl;
+ }
+};
+
+int main()
+{
+
+ ElectricityBill obj2("Rahul Sharma", 250);   // Object using Parameterized Constructor
+ obj2.calculateBill();
+ obj2.displayBill();
+ return 0;
+
+}  */
+
+
+//MOVIE TICKET BOOKING SYSTEM
+
+#include <iostream>
+using namespace std;
+
+class MovieTicket
+{
+private:
+ string movieName;
+ int seatNumber;
+ float ticketPrice;
+ bool isBooked;
+
+public:
+ MovieTicket();  // Constructors
+ MovieTicket(string name, int seat, float price);
+
+ void bookTicket();
+ void cancelTicket();
+ void displayTicketDetails();
+ float calculateTotalCost(int numberOfTickets);
+};
+
+
+
+MovieTicket :: MovieTicket(string name, int seat, float price)  // Parameterized Constructor
+{
+ movieName = name;
+ seatNumber = seat;
+ ticketPrice = price;
+ isBooked = false;
+}
+
+void MovieTicket :: bookTicket()   // Book Ticket
+{
+ if(!isBooked)
+ {
+ isBooked = true;
+ cout << "Ticket booked successfully for seat " << seatNumber << endl;
+ }
+ else
+ {
+ cout << "Seat already booked.\n";
+ }
+}
+
+void MovieTicket :: cancelTicket()  // Cancel Ticket
+{
+ if(isBooked)
+ {
+ isBooked = false;
+ cout << "Ticket cancelled for seat " << seatNumber << endl;
+ }
+ else
+ {
+ cout << "Ticket is not booked yet.\n";
+ }
+}
+
+void MovieTicket :: displayTicketDetails()   // Display Ticket Details
+{
+ cout << "\n----- Ticket Details -----\n";
+ cout << "Movie Name : " << movieName << endl;
+ cout << "Seat Number: " << seatNumber << endl;
+ cout << "Ticket Price: Rs. " << ticketPrice << endl;
+ cout << "Status: " << (isBooked ? "Booked" : "Not Booked") << endl;
+}
+
+float MovieTicket :: calculateTotalCost(int numberOfTickets)   // Calculate Total Cost
+{
+ return numberOfTickets * ticketPrice;
+}
+
+
+int main()
+{
+ // Object using default constructor
+ MovieTicket ticket1;
+
+ // Object using parameterized constructor
+ MovieTicket ticket2("Avengers", 10, 300);
+
+ ticket2.bookTicket();
+
+ ticket2.displayTicketDetails();
+ cout << "\nTotal cost for 3 tickets: Rs. "
+ << ticket2.calculateTotalCost(3) << endl;
+ ticket2.cancelTicket();
+ ticket2.displayTicketDetails();
+ return 0;
+}
