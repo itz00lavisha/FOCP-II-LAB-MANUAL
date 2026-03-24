@@ -241,7 +241,7 @@ int main()
  obj2.displayBill();
  return 0;
 
-}  */
+}  
 
 
 //MOVIE TICKET BOOKING SYSTEM
@@ -267,7 +267,13 @@ public:
  float calculateTotalCost(int numberOfTickets);
 };
 
-
+MovieTicket :: MovieTicket()  // Default Constructor
+{
+ movieName = "Not Assigned";
+ seatNumber = 0;
+ ticketPrice = 200;
+ isBooked = false;
+}
 
 MovieTicket :: MovieTicket(string name, int seat, float price)  // Parameterized Constructor
 {
@@ -334,4 +340,64 @@ int main()
  ticket2.cancelTicket();
  ticket2.displayTicketDetails();
  return 0;
+}    */
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class Person
+{
+    string name;int age;
+    public:
+    Person()
+    { 
+        cout<<"\n Person default constructor";
+        name="Default";
+        age=18;
+    }
+    Person(string nm,int ag)
+    {
+        cout<<"\n Person parametarized constrtuctor";
+        name=nm;
+        age=ag;
+    }
+    void display()
+    {
+        cout<<"\n Name="<<name<<"\n Age= "<<age;
+    }
+};
+
+
+class Student:public Person
+{
+    string rollno;
+    public:
+    Student()
+    {
+        cout<<"\n Student default constructor"; 
+        rollno="25CSU000";
+    }
+    Student(string na,int ag,string rno):Person(na,ag)  //initialization list
+    {
+        cout<<"\n Student Parametrised";
+        rollno=rno;
+    }
+    void display_Student()
+    {
+        display();
+        cout<<"\n Roll no= "<<rollno;
+    }
+};
+
+int main()
+{
+    Student p1,p2("abcd",23,"25CSU111");
+    p1.display();
+    p1.display_Student();
+    p2.display_Student();
+    return 0;
 }
