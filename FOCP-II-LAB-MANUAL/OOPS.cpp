@@ -340,7 +340,7 @@ int main()
  ticket2.cancelTicket();
  ticket2.displayTicketDetails();
  return 0;
-}    */
+}    
 
 
 
@@ -399,5 +399,62 @@ int main()
     p1.display();
     p1.display_Student();
     p2.display_Student();
+    return 0;
+}*/
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class Account {
+protected:
+    int accNo;
+    float balance;
+public:
+    Account(int a, float b)
+     {
+        accNo = a;
+        balance = b;
+    }
+
+    void displayAccount() 
+    {
+        cout << "Account No: " << accNo << endl;
+        cout << "Balance: " << balance << endl;
+    }
+
+    ~Account() 
+    {
+        cout << "Account Ended" << endl;
+    }
+};
+
+
+class SavingsAccount : public Account {
+    float rate;
+public:
+    SavingsAccount(int a, float b, float r) : Account(a, b)
+     {
+        rate = r;
+    }
+
+    void calculateInterest() {
+        float interest = (balance * rate) / 100;
+        cout << "Interest: " << interest << endl;
+    }
+
+    ~SavingsAccount() {
+        cout << "Savings Account Ended" << endl;
+    }
+};
+
+int main() {
+    SavingsAccount s1(101, 5000, 5);
+
+    s1.displayAccount();
+    s1.calculateInterest();
+
     return 0;
 }
