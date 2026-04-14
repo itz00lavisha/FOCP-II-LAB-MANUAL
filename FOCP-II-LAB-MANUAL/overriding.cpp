@@ -57,6 +57,6 @@ int main()
   ss.shape::area();
   ss.display();
   
-  return 0;
+return 0;
 
 }
