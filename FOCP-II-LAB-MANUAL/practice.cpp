@@ -41,7 +41,7 @@ int main()
 
 
 
-//virtual key word overriding
+//virtual key word (overriding)
 
 #include <iostream>
 using namespace std;
