@@ -400,7 +400,7 @@ int main()
     p1.display_Student();
     p2.display_Student();
     return 0;
-}*/
+}
 
 
 
@@ -457,4 +457,100 @@ int main() {
     s1.calculateInterest();
 
     return 0;
+}*/
+
+
+
+#include <iostream>
+using namespace std;
+
+class A
+{
+    public:
+int a;
+A()
+{
+    cout<<"Default Constructor "<<endl;
+     a=150;
 }
+void display()
+{
+    cout<<"\n vale of a: "<<a<<endl;
+}
+~A()
+{
+    cout<<"Constructor destroyed";
+}
+};
+
+
+class B:public A
+{
+    public:
+int b;
+B()
+{
+    cout<<"Default Constructor "<<endl;
+     b=219;
+}
+void display()
+{
+    cout<<"Vale of b: "<<b<<endl;
+}
+~B()
+{
+    cout<<"Constructor destroyed";
+}
+};
+
+class C:public A
+{
+    public:
+int c;
+C()
+{
+    cout<<"Default Constructor "<<endl;
+     c=350;
+}
+void display()
+{
+    cout<<"CValue of c: "<<c<<endl;
+}
+~C()
+{
+    cout<<"Constructor destroyed";
+}
+};
+
+class D:public B,public C
+{
+    public:
+int d;
+D()
+{
+    cout<<"Default Constructor "<<endl;
+     d=500;
+}
+void display()
+{
+    cout<<"Value of d: "<<d<<endl;
+}
+~D()
+{
+    cout<<"Constructor destroyed";
+}
+};
+
+
+int main()
+{
+  D dobj;
+  //
+  dobj.display_D();
+  return 0,
+
+
+}
+
+
+//diamond pblm when comes from multiple sources to a single child so we add virtual to that class in the code 
